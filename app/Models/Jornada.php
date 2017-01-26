@@ -1,24 +1,25 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Jornada extends Model
 {
+	protected $touches = ['modalidad'];
     /*********************************** RELACIONES ***********************************/
     //Uno a muchos)
 	public function modalidad() {
-		return $this->belongsTo('App\Models\Modalidad');
+		return $this->belongsTo('luj\Models\Modalidad');
 	}
 
 	public function partidos() {
-		return $this->hasMany('App\Models\Partido');
+		return $this->hasMany('luj\Models\Partido');
 	}
 
 	//Muchos a muchos
 	public function grupos() {
-		return $this->belongsToMany('App\Models\Grupo');
+		return $this->belongsToMany('luj\Models\Grupo')->withTimestamps();
 	}
 
 	//Si el competidor aun no ha jugado en esa jornada

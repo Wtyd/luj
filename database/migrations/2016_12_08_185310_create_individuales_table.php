@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndividualsTable extends Migration
+class CreateIndividualesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateIndividualsTable extends Migration
      */
     public function up()
     {
-        Schema::table('individuales', function(Blueprint $table){
-        
-            $table->create();
+        Schema::create('individuales', function(Blueprint $table){
+            $table->increments('id');
             $table->integer('competidor_id')->unsigned()->index();
             $table->foreign('competidor_id')->references('id')->on('competidores');
-            $table->boolean('masculino');
+            $table->boolean('masculino')->default(true);
 
             $table->timestamps();
         });

@@ -13,11 +13,8 @@ class CreateComentariosTable extends Migration
      */
     public function up()
     {
-        Schema::table('comentarios', function(Blueprint $table){
-            $table->create();
-
+        Schema::create('comentarios', function(Blueprint $table){
             $table->increments('id');
-
             $table->text('comentario');
             $table->enum('estado', array('no_publicado', 'publicado', 'moderado', 'papelera'));
             $table->integer('user_id')->unsigned();

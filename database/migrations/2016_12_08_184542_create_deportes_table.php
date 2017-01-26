@@ -13,11 +13,8 @@ class CreateDeportesTable extends Migration
      */
     public function up()
     {
-        Schema::table('deportes', function(Blueprint $table){
-            $table->create();
-
-            $table->increments('id');
-            
+        Schema::create('deportes', function(Blueprint $table){
+           $table->increments('id');
             $table->string('nombre', 20);
             $table->string('icono', 50)->nullable();
 

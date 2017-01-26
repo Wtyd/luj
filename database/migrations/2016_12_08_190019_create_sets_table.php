@@ -13,8 +13,8 @@ class CreateSetsTable extends Migration
      */
     public function up()
     {
-        Schema::table('sets', function(Blueprint $table){
-            $table->create();
+        Schema::create('sets', function(Blueprint $table){
+            $table->increments('id');
             //El set es una entidad debil que de existir forma parte de un partido CP => (num,partido_id)
             $table->integer('numero')->index();
             $table->integer('partido_id')->unsigned()->index();

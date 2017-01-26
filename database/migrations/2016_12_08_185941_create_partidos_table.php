@@ -13,9 +13,7 @@ class CreatePartidosTable extends Migration
      */
     public function up()
     {
-        Schema::table('partidos', function($table){
-            $table->create();
-
+        Schema::create('partidos', function($table){
             $table->increments('id');
             $table->enum('estado', array('oculto', 'publicado', 'aplazado'));
             //descripcion sirve para poner las incidencias de cada equipo, goles ,tarjetas...

@@ -13,11 +13,8 @@ class CreateIncidenciasTable extends Migration
      */
     public function up()
     {
-        Schema::table('incidencias', function(Blueprint $table){
-            $table->create();
-
+        Schema::create('incidencias', function(Blueprint $table){
             $table->increments('id');
-
             $table->boolean('resuelta')->default(0);
             $table->text('descripcion')->nullable();
             $table->text('notas')->nullable();

@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class Servidor extends Model
 	/*********************************** RELACIONES ***********************************/
     //Uno a muchos
 	public function videos() {
-		return $this->hasMany('App\Models\Video');
+		return $this->hasMany('luj\Models\Video');
 	}
 }

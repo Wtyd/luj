@@ -13,18 +13,16 @@ class CreateJornadasTable extends Migration
      */
     public function up()
     {
-        Schema::table('jornadas', function(Blueprint $table){
-            $table->create();
-
-            $table->increments('id');
-            
+        Schema::create('jornadas', function(Blueprint $table){   
+            $table->increments('id');         
             $table->string('nombre', 50);
             $table->integer('num_jornada');
             $table->integer('num_partidos');
+            $table->integer('partidosXronda');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->integer('competicion_id')->unsigned();
-            $table->foreign('competicion_id')->references('id')->on('competiciones');
+            $table->integer('modalidad_id')->unsigned();
+            $table->foreign('modalidad_id')->references('id')->on('modalidades');
             
             $table->timestamps();
 

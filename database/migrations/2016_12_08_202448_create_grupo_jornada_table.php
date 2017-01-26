@@ -13,11 +13,8 @@ class CreateGrupoJornadaTable extends Migration
      */
     public function up()
     {
-        Schema::table('grupo_jornada', function(Blueprint $table){
-            $table->create();
-
+        Schema::create('grupo_jornada', function(Blueprint $table){
             $table->increments('id');
-
             $table->integer('grupo_id')->unsigned();
             $table->foreign('grupo_id')->references('id')->on('grupos');
             $table->integer('jornada_id')->unsigned();

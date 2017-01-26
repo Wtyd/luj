@@ -13,10 +13,8 @@ class CreateVideosTable extends Migration
      */
     public function up()
     {
-        Schema::table('videos', function(Blueprint $table){
-            $table->create();
+        Schema::create('videos', function(Blueprint $table){
             $table->increments('id');
-
             $table->string('nombre', 50);
             $table->string('enlace');
             $table->boolean('principal');

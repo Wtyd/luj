@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompetidorsTable extends Migration
+class CreateCompetidoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateCompetidorsTable extends Migration
      */
     public function up()
     {
-        Schema::table('competidores', function(Blueprint $table){
-        
-
-            $table->create();
-
+        Schema::create('competidores', function(Blueprint $table){
             $table->increments('id');
-            $table->string('nombre', 20);
-            $table->string('imagen', 50)->nullable(); //las selecciones no tendran escudo
+            $table->string('nombre', 30);
+            $table->string('imagen', 30)->nullable(); //las selecciones no tendran escudo
             $table->integer('pais_id')->unsigned();
             $table->foreign('pais_id')->references('id')->on('paises');
             $table->integer('deporte_id')->unsigned();

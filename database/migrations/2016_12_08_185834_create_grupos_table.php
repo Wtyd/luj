@@ -13,10 +13,8 @@ class CreateGruposTable extends Migration
      */
     public function up()
     {
-        Schema::table('grupos', function(Blueprint $table){
-            $table->create();
-            $table->increments('id');
-            
+        Schema::create('grupos', function(Blueprint $table){       
+            $table->increments('id');     
             $table->string('nombre', 10);
             $table->integer('num_jornadas');
             $table->integer('num_equipos');

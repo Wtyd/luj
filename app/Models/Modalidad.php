@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,17 +11,17 @@ class Modalidad extends Model
     /*********************************** RELACIONES ***********************************/
 	//Competicion-Jornadas (muchos a muchos)
  	public function jornadas() {
-        return $this->hasMany('App\Models\Jornada')->orderBy('num_jornada', 'asc');
+        return $this->hasMany('luj\Models\Jornada')->orderBy('num_jornada', 'asc');
 	}
 
 	//Competicion-Grupos (muchos a muchos)
  	public function grupos() {
-        return $this->hasMany('App\Models\Grupo');
+        return $this->hasMany('luj\Models\Grupo');
 	}
 
 	//Competicion-Equipos (muchos a muchos)
  	public function competidores() {
-        return $this->belongsToMany('App\Models\Competidor')->orderBy('nombre', 'asc')->orderBy('id', 'desc');
+        return $this->belongsToMany('luj\Models\Competidor')->orderBy('nombre', 'asc')->orderBy('id', 'desc');
 	}
 
 	//Competicion-Tipo Competicion (uno a muchos)

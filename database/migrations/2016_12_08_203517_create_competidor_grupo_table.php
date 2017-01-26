@@ -13,11 +13,8 @@ class CreateCompetidorGrupoTable extends Migration
      */
     public function up()
     {
-        Schema::table('competidor_grupo', function(Blueprint $table){
-            $table->create();
-
+        Schema::create('competidor_grupo', function(Blueprint $table){
             $table->increments('id');
-
             $table->integer('grupo_id')->unsigned();
             $table->foreign('grupo_id')->references('id')->on('grupos');
             $table->integer('competidor_id')->unsigned();

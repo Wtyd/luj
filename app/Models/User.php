@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +10,7 @@ class User extends Authenticatable
     /*********************************** CONFIG ***********************************/
     use Notifiable;
     //Estos ultimos son necesarios para la autenticacion?
-    use UserTrait, RemindableTrait;
+    //use UserTrait, RemindableTrait;
 
     protected $fillable = [
         'name', 'email', 'password',
@@ -23,16 +23,16 @@ class User extends Authenticatable
     /*********************************** RELACIONES ***********************************/
     //Muchos a muchos
     public function competidores() {
-        return $this->belongsToMany('App\Models\Competidor');
+        return $this->belongsToMany('luj\Models\Competidor');
     }
 
     //Uno a muchos
     public function incidencias() {
-        return $this->hasMany('App\Models\Incidencia');
+        return $this->hasMany('luj\Models\Incidencia');
     }
 
     public function comentarios() {
-        return $this->hasMany('App\Models\Comentario');
+        return $this->hasMany('luj\Models\Comentario');
     }
 
     /*********************************** FUNCIONES ***********************************/

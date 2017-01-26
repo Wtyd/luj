@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,22 +9,22 @@ class Video extends Model
     /*********************************** RELACIONES ***********************************/
 	//Video-Servidor (uno a muchos)
 	public function servidor() {
-		return $this->belongsTo('App\Models\Servidor');
+		return $this->belongsTo('luj\Models\Servidor');
 	}
 
 	//Video-Partido (uno a muchos)
 	public function partido() {
-		return $this->belongsTo('App\Models\Partido');
+		return $this->belongsTo('luj\Models\Partido');
 	}
 
 	//Video-Comentario (uno a muchos)
 	public function comentarios() {
-		return $this->hasMany('App\Models\Comentario');
+		return $this->hasMany('luj\Models\Comentario');
 	}
 
 	//Video-Incidencia (uno a muchos)
 	public function incidencias() {
-		return $this->hasMany('App\Models\Incidencia');
+		return $this->hasMany('luj\Models\Incidencia');
 	}
 
 	/*********************************** FUNCIONES ***********************************/

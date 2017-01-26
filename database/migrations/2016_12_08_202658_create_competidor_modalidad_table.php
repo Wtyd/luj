@@ -13,11 +13,8 @@ class CreateCompetidorModalidadTable extends Migration
      */
     public function up()
     {
-        Schema::table('competidor_modalidad', function(Blueprint $table){
-            $table->create();
-
+        Schema::create('competidor_modalidad', function(Blueprint $table){
             $table->increments('id');
-
             $table->integer('competidor_id')->unsigned();
             $table->foreign('competidor_id')->references('id')->on('competidores');
             $table->integer('modalidad_id')->unsigned();

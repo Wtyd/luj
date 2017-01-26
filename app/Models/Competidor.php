@@ -1,47 +1,55 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Competidor extends Model
 {
     protected $table='competidores';
-
 	/*********************************** RELACIONES ***********************************/
 	//Uno a muchos
 	public function pais() {
-		return $this->belongsTo('App\Models\Pais');
+		return $this->belongsTo('luj\Models\Pais');
 	}
 
 	public function deporte() {
-		return $this->belongsTo('App\Models\Deporte');
+		return $this->belongsTo('luj\Models\Deporte');
 	}
 
 	//Muchos a muchos
 	public function modalidades() {
-		return $this->belongsToMany('App\Models\Modalidad');
+		return $this->belongsToMany('luj\Models\Modalidad');
 	}
 
 	public function usuarios() {
-		return $this->belongsToMany('App\Models\User', 'user_id');
+		return $this->belongsToMany('luj\Models\User', 'user_id');
 	}
 
 	public function grupos() {
-		return $this->belongsToMany('App\Models\Grupo')->withTimestamps()->withPivot('p_a_favor', 'p_en_contra', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos');
+		return $this->belongsToMany('luj\Models\Grupo')->withTimestamps()->withPivot('p_a_favor', 'p_en_contra', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos');
 	}
 
+	//Uno a uno
+	public function equipo() {
+		return $this->hasOne('luj\Models\Equipo');
+	}
+
+	public function individual() {
+		return $this->hasOne('luj\Models\Equipo');
+	}
+/*
 	//Para acceder a los datos de la tabla pivote Equipo-Grupos
 	public function newPivot(Eloquent $parent, array $attributes, $table, $exists) {
         if ($parent instanceof Grupo) {
             return new EquipoGrupo($parent, $attributes, $table, $exists);
         }
         return parent::newPivot($parent, $attributes, $table, $exists);
-    }
+    }*/
 
 	//Uno a muchos
 	public function partidos() {
-		return $this->hasMany('App\Models\Partido');
+		return $this->hasMany('luj\Models\Partido');
 	}
 
 	/*********************************** FUNCIONES ***********************************/

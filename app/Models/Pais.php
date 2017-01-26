@@ -1,21 +1,22 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Pais extends Model
 {
     protected $table='paises';
+    //public $timestamps = false;
 
     /*********************************** RELACIONES ***********************************/
 	//Uno a muchos
  	public function tcompeticiones() {
-        return $this->hasMany('App\Models\Tcompeticion');
+        return $this->hasMany('luj\Models\Tcompeticion');
     }
 
  	public function competidores() {
-        return $this->hasMany('App\Models\Competidor')->orderBy('nombre', 'asc');
+        return $this->hasMany('luj\Models\Competidor')->orderBy('nombre', 'asc');
     }
 
     /*********************************** FUNCIONES ***********************************/

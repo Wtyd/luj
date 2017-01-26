@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,15 +11,15 @@ class Tcompeticion extends Model
     /*********************************** RELACIONES ***********************************/
 	//Uno a muchos
 	public function pais() {
-		return $this->belongsTo('App\Models\Pais');
+		return $this->belongsTo('luj\Models\Pais');
 	}
 
 	public function deporte() {
-		return $this->belongsTo('App\Models\Deporte');
+		return $this->belongsTo('luj\Models\Deporte');
 	}
 
  	public function competiciones() {
-        return $this->hasMany('App\Models\Competicion');
+        return $this->hasMany('luj\Models\Competicion');
     }
 
 

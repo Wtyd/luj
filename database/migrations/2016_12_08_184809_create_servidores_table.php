@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServidorsTable extends Migration
+class CreateServidoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateServidorsTable extends Migration
      */
     public function up()
     {
-        Schema::table('servidores', function(Blueprint $table){
-            $table->create();
-
+        Schema::create('servidores', function(Blueprint $table){
             $table->increments('id');
-
             $table->string('nombre', 20);
             $table->string('logo', 50);
 

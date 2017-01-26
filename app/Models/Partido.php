@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,27 +9,27 @@ class Partido extends Model
 	/*********************************** RELACIONES ***********************************/
     //Uno a muchos
 	public function jornada() {
-		return $this->belongsTo('App\Models\Jornada');
+		return $this->belongsTo('luj\Models\Jornada');
 	}
 
 	public function grupo() {
-		return $this->belongsTo('App\Models\Grupo');
+		return $this->belongsTo('luj\Models\Grupo');
 	}
 	
 	public function videos() {
-		return $this->hasMany('App\Models\Video');
+		return $this->hasMany('luj\Models\Video');
 	}
 	
 	public function video() {
-		return $this->has('App\Models\Video');
+		return $this->has('luj\Models\Video');
 	}
 
 	public function local() {
-		return $this->belongsTo('App\Models\Competidor', 'equipo_local_id');
+		return $this->belongsTo('luj\Models\Competidor', 'equipo_local_id');
 	}
 
 	public function visitante() {
-		return $this->belongsTo('App\Models\Competidor', 'equipo_visitante_id');
+		return $this->belongsTo('luj\Models\Competidor', 'equipo_visitante_id');
 	}
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace luj;
+namespace luj\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,20 +11,20 @@ protected $table = 'grupos';
 	/*********************************** RELACIONES ***********************************/
 	//Uno a muchos)
 	public function modalidad() {
-		return $this->belongsTo('App\Models\Modalidad');
+		return $this->belongsTo('luj\Models\Modalidad');
 	}
 
 	public function partidos() {
-        return $this->belongsToMany('App\Models\Partido')->orderBy('fecha_hora', 'desc');
+        return $this->belongsToMany('luj\Models\Partido')->orderBy('fecha_hora', 'desc');
 	}
 
     //Muchos a muchos
  	public function jornadas() {
-        return $this->belongsToMany('App\Models\Jornada')->orderBy('num_jornada', 'asc');
+        return $this->belongsToMany('luj\Models\Jornada')->orderBy('num_jornada', 'asc')->withTimestamps();
 	}
 
 	public function competidores() {
-		return $this->belongsToMany('App\Models\Competidores')->withTimestamps()->withPivot('p_a_favor', 'p_en_contra', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos')->orderBy('puntuacion', 'desc')->orderBy('diferencia', 'desc');
+		return $this->belongsToMany('luj\Models\Competidores')->withTimestamps()->withPivot('p_a_favor', 'p_en_contra', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos')->orderBy('puntuacion', 'desc')->orderBy('diferencia', 'desc');
 	}
 /*
 	//Para acceder a los datos de la tabla pivote Equipo-Grupos

@@ -13,13 +13,13 @@ class CreateEquiposTable extends Migration
      */
     public function up()
     {
-        Schema::table('equipos', function(Blueprint $table){
-        
-            $table->create();
+        Schema::create('equipos', function(Blueprint $table){
+            $table->increments('id');
             $table->integer('competidor_id')->unsigned()->index();
             $table->foreign('competidor_id')->references('id')->on('competidores');
+            
             $table->string('acronimo', 3);
-            $table->boolean('seleccion');
+            $table->boolean('seleccion')->default(false);
 
             $table->timestamps();
         });
