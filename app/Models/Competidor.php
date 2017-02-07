@@ -27,7 +27,7 @@ class Competidor extends Model
 	}
 
 	public function grupos() {
-		return $this->belongsToMany('luj\Models\Grupo')->withTimestamps()->withPivot('p_a_favor', 'p_en_contra', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos');
+		return $this->belongsToMany('luj\Models\Grupo')->withTimestamps()->withPivot('p_totales', 'p_a_favor', 'p_en_contra', 'diferencia_p', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos');
 	}
 
 	//Uno a uno
@@ -36,7 +36,7 @@ class Competidor extends Model
 	}
 
 	public function individual() {
-		return $this->hasOne('luj\Models\Equipo');
+		return $this->hasOne('luj\Models\Individual');
 	}
 /*
 	//Para acceder a los datos de la tabla pivote Equipo-Grupos

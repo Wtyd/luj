@@ -38,6 +38,8 @@ Class PaisTableSeeder extends Seeder {
 		factory(luj\Models\Pais::class)->create([
 			'nombre' => 'Bélgica', 'nombre_corto' => 'BEL', 'bandera' => 'Belgica.png', ]);
 		factory(luj\Models\Pais::class)->create([
+			'nombre' => 'Bulgaria', 'nombre_corto' => 'BUL', 'bandera' => 'Belgica.png', ]);
+		factory(luj\Models\Pais::class)->create([
 			'nombre' => 'Croacia', 'nombre_corto' => 'CRO', 'bandera' => 'Croacia.png', ]);
 		//6
 		factory(luj\Models\Pais::class)->create([

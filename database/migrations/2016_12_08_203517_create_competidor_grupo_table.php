@@ -20,8 +20,10 @@ class CreateCompetidorGrupoTable extends Migration
             $table->integer('competidor_id')->unsigned();
             $table->foreign('competidor_id')->references('id')->on('competidores');
 
+            $table->integer('p_totales')->default(0);
             $table->integer('p_a_favor')->default(0);
             $table->integer('p_en_contra')->default(0);
+            $table->integer('diferencia_p')->default(0);
 
             $table->integer('partidos_totales')->default(0);
             $table->integer('p_ganados')->default(0);

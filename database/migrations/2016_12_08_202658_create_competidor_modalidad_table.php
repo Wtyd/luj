@@ -20,6 +20,7 @@ class CreateCompetidorModalidadTable extends Migration
             $table->integer('modalidad_id')->unsigned();
             $table->foreign('modalidad_id')->references('id')->on('modalidades');
 
+            /* estas columnas no se pq estan
             $table->integer('p_a_favor')->default(0);
             $table->integer('p_en_contra')->default(0);
 
@@ -27,7 +28,7 @@ class CreateCompetidorModalidadTable extends Migration
             $table->integer('p_ganados')->default(0);
             $table->integer('p_empatados')->default(0);
             $table->integer('p_perdidos')->default(0);
-
+            */
             $table->timestamps();
 
         });
