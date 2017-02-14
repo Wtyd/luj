@@ -20,7 +20,11 @@ class CreateCompetidoresTable extends Migration
             $table->integer('pais_id')->unsigned();
             $table->foreign('pais_id')->references('id')->on('paises');
             $table->integer('deporte_id')->unsigned();
-            $table->foreign('deporte_id')->references('id')->on('deportes'); 
+            $table->foreign('deporte_id')->references('id')->on('deportes');
+
+            //Relación "Es un", la tabla principal hace referencia a las que heredan
+            $table->integer('competible_id')->unsigned()->index();
+            $table->string('competible_type');
 
             $table->timestamps();
         });

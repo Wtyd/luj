@@ -2,7 +2,6 @@
 
 $factory->define(luj\Models\Individual::class, function (Faker\Generator $faker) {
     return [
-        'competidor_id' => 1,
         'masculino' =>  $faker->boolean,        
     ];
 });
@@ -17,6 +16,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'AlemaniaH', function (Faker\Ge
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Alemania')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'CanadaH', function (Faker\Generator $faker) {
@@ -31,6 +32,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'CanadaH', function (Faker\Gene
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Canada')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'EEUUH', function (Faker\Generator $faker) {
@@ -41,6 +44,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'EEUUH', function (Faker\Genera
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'EEUU')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 
@@ -54,6 +59,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'EspañaH', function (Faker\Gen
         //'pais_id' => luj\Models\Pais::all()->random()->id,
         'pais_id' => luj\Models\Pais::where('nombre', 'España')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'FranciaH', function (Faker\Generator $faker) {
@@ -64,6 +71,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'FranciaH', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Francia')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'HolandaH', function (Faker\Generator $faker) {
@@ -74,6 +83,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'HolandaH', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Holanda')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'IndiaH', function (Faker\Generator $faker) {
@@ -87,6 +98,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'IndiaH', function (Faker\Gener
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'India')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'ItaliaH', function (Faker\Generator $faker) {
@@ -97,6 +110,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'ItaliaH', function (Faker\Gene
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Italia')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'MexicoH', function (Faker\Generator $faker) {
@@ -107,6 +122,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'MexicoH', function (Faker\Gene
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Mexico')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'NoruegaH', function (Faker\Generator $faker) {
@@ -117,6 +134,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'NoruegaH', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Noruega')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'PortugalH', function (Faker\Generator $faker) {
@@ -127,6 +146,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'PortugalH', function (Faker\Ge
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Portugal')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'RepChecaH', function (Faker\Generator $faker) {
@@ -137,6 +158,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'RepChecaH', function (Faker\Ge
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Rep. Checa')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'RumaniaH', function (Faker\Generator $faker) {
@@ -147,6 +170,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'RumaniaH', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Rumania')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'SuizaH', function (Faker\Generator $faker) {
@@ -167,6 +192,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'SuizaH', function (Faker\Gener
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Suiza')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 
@@ -181,6 +208,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'AlemaniaM', function (Faker\Ge
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Alemania')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'CanadaM', function (Faker\Generator $faker) {
@@ -195,6 +224,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'CanadaM', function (Faker\Gene
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Canada')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'EEUUM', function (Faker\Generator $faker) {
@@ -205,6 +236,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'EEUUM', function (Faker\Genera
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'EEUU')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 
@@ -218,6 +251,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'EspañaM', function (Faker\Gen
         //'pais_id' => luj\Models\Pais::all()->random()->id,
         'pais_id' => luj\Models\Pais::where('nombre', 'España')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'FranciaM', function (Faker\Generator $faker) {
@@ -228,6 +263,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'FranciaM', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Francia')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'HolandaM', function (Faker\Generator $faker) {
@@ -238,6 +275,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'HolandaM', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Holanda')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'IndiaM', function (Faker\Generator $faker) {
@@ -251,6 +290,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'IndiaM', function (Faker\Gener
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'India')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'ItaliaM', function (Faker\Generator $faker) {
@@ -261,6 +302,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'ItaliaM', function (Faker\Gene
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Italia')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'MexicoM', function (Faker\Generator $faker) {
@@ -271,6 +314,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'MexicoM', function (Faker\Gene
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Mexico')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'NoruegaM', function (Faker\Generator $faker) {
@@ -281,6 +326,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'NoruegaM', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Noruega')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'PortugalM', function (Faker\Generator $faker) {
@@ -291,6 +338,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'PortugalM', function (Faker\Ge
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Portugal')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'RepChecaM', function (Faker\Generator $faker) {
@@ -301,6 +350,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'RepChecaM', function (Faker\Ge
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Rep. Checa')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'RumaniaM', function (Faker\Generator $faker) {
@@ -311,6 +362,8 @@ $factory->defineAs(luj\Models\Competidor::class, 'RumaniaM', function (Faker\Gen
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Rumania')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });
 $factory->defineAs(luj\Models\Competidor::class, 'SuizaM', function (Faker\Generator $faker) {
@@ -331,5 +384,7 @@ $factory->defineAs(luj\Models\Competidor::class, 'SuizaM', function (Faker\Gener
         'imagen' => str_replace(' ', '', $nombre.'.png'), //quita los espacios en blanco
         'pais_id' => luj\Models\Pais::where('nombre', 'Suiza')->first()->id,
         'deporte_id' => $faker->numberBetween(1, 3),
+        'competible_id' => $faker->numberBetween(1, 3),
+        'competible_type' => 'luj\Models\Individual',
     ];
 });

@@ -7,7 +7,7 @@ class IndividualTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('competidores')->truncate();
+        //DB::table('competidores')->truncate();
         DB::table('individuales')->truncate();
         $fecha = date("Y-m-d H:i:s");
         //factory(luj\Models\Competidor::class, 49)->create();
@@ -18,22 +18,20 @@ class IndividualTableSeeder extends Seeder
         
         //TENISTAS MASCULINOS
         foreach ($paises as $p) {
-                factory(luj\Models\Competidor::class, $p.'H', 5)->create([
-            'deporte_id' => 3])->each(function ($u) {
-                $u->equipo()->save(factory(luj\Models\Individual::class)->create([
-                    'masculino' => true
-                    ]));
-            });
+            for ($i=0; $i < 5; $i++) { 
+                $h = factory(luj\Models\Individual::class)->create(['masculino' => true]);
+                factory(luj\Models\Competidor::class, $p.'H')->create([
+                    'competible_id' => $h->id, 'deporte_id' => 3]);
+            }
         }
     
         //TENISTAS FEMENINAS
         foreach ($paises as $p) {
-            factory(luj\Models\Competidor::class, $p.'M', 5)->create([
-            'deporte_id' => 3])->each(function ($u) {
-                $u->equipo()->save(factory(luj\Models\Individual::class)->create([
-                    'masculino' => false
-                    ]));
-            });
+            for ($i=0; $i < 5; $i++) { 
+                $h = factory(luj\Models\Individual::class)->create(['masculino' => false]);
+                factory(luj\Models\Competidor::class, $p.'M')->create([
+                    'competible_id' => $h->id, 'deporte_id' => 3]);
+            }
         }
     }
 }

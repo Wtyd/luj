@@ -15,8 +15,6 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('competidor_id')->unsigned()->index();
-            $table->foreign('competidor_id')->references('id')->on('competidores');
             
             $table->string('acronimo', 3);
             $table->boolean('seleccion')->default(false);

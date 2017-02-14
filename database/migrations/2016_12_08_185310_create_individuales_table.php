@@ -15,8 +15,6 @@ class CreateIndividualesTable extends Migration
     {
         Schema::create('individuales', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('competidor_id')->unsigned()->index();
-            $table->foreign('competidor_id')->references('id')->on('competidores');
             $table->boolean('masculino')->default(true);
 
             $table->timestamps();

@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        /*
+       
     	$this->call('UserTableSeeder');     
     	$this->call('PaisTableSeeder');
     	$this->call('DeporteTableSeeder');
@@ -22,12 +22,11 @@ class DatabaseSeeder extends Seeder
         $this->call('GrupoTableSeeder');
 		$this->call('JornadaTableSeeder');
         //$this->call('CompetidorTableSeeder'); no uso este seeder
-
         $this->call('EquipoTableSeeder');
-        $this->call('IndividualTableSeeder');*/
+        $this->call('IndividualTableSeeder');
         
-        
-        $this->call('CompetidorGrupoModalidadTableSeeder'); //Tabla pivote
+    /*     
+        $this->call('CompetidorGrupoModalidadTableSeeder'); //Tabla pivote*/
 		/*$this->call('PartidoTableSeeder');//sets
 		$this->call('VideoTableSeeder');
 		$this->call('ComentarioTableSeeder');

@@ -8,6 +8,11 @@ class Competidor extends Model
 {
     protected $table='competidores';
 	/*********************************** RELACIONES ***********************************/
+	//Es un
+	public function competible() {
+		return $this->morphTo();
+	}
+
 	//Uno a muchos
 	public function pais() {
 		return $this->belongsTo('luj\Models\Pais');
@@ -30,14 +35,7 @@ class Competidor extends Model
 		return $this->belongsToMany('luj\Models\Grupo')->withTimestamps()->withPivot('p_totales', 'p_a_favor', 'p_en_contra', 'diferencia_p', 'partidos_totales', 'p_ganados', 'p_empatados', 'p_perdidos');
 	}
 
-	//Uno a uno
-	public function equipo() {
-		return $this->hasOne('luj\Models\Equipo');
-	}
 
-	public function individual() {
-		return $this->hasOne('luj\Models\Individual');
-	}
 /*
 	//Para acceder a los datos de la tabla pivote Equipo-Grupos
 	public function newPivot(Eloquent $parent, array $attributes, $table, $exists) {

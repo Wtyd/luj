@@ -9,22 +9,31 @@ class Modalidad extends Model
     protected $table='modalidades';
     
     /*********************************** RELACIONES ***********************************/
-	//Competicion-Jornadas (muchos a muchos)
+	//Ternaria con individual y equipo
+    public function individuales(){
+    	return $this->belongsToMany('Individual');
+  	}
+
+  	public function equipos(){
+    	return $this->belongsToMany('Equipo');
+  	}
+
+	//Modalidad-Jornadas (muchos a muchos)
  	public function jornadas() {
         return $this->hasMany('luj\Models\Jornada')->orderBy('num_jornada', 'asc');
 	}
 
-	//Competicion-Grupos (muchos a muchos)
+	//Modalidad-Grupos (muchos a muchos)
  	public function grupos() {
         return $this->hasMany('luj\Models\Grupo');
 	}
 
-	//Competicion-Equipos (muchos a muchos)
+	//Modalidad-Competidroes (muchos a muchos)
  	public function competidores() {
         return $this->belongsToMany('luj\Models\Competidor')->orderBy('nombre', 'asc')->orderBy('id', 'desc');
 	}
 
-	//Competicion-Tipo Competicion (uno a muchos)
+	//Modalidad-Tipo Competicion (uno a muchos)
 	public function tcompeticion() {
 		return $this->belongsTo('Tcompeticion');
 	}

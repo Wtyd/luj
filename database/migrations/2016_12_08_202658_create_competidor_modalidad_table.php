@@ -6,11 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCompetidorModalidadTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('competidor_modalidad', function(Blueprint $table){
@@ -34,11 +30,6 @@ class CreateCompetidorModalidadTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('competidor_modalidad');
